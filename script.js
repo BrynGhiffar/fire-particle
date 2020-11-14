@@ -70,7 +70,7 @@ class fire{
     spawnParticle(){
         // Spawns a particle every this.spawnTimeInterval frames
         // this.particlesPerSpawn particles are spawned every
-        // spawn
+        // spawn.
         for (var i = 0; i < this.particlesPerSpawn; i++){
             if (this.timeToSpawn >= this.spawnTimeInterval){
 
@@ -97,6 +97,8 @@ class fire{
         }
     }
     particleFade(){
+        // Sets individual particles to fade as
+        // they're lifetime wanes.
         for (var i = 0; i < this.particleArray.length; i++){
             // Maps the particles age to the opacity.
             var opacity = map(this.particleArray[i].lifeTime, 0, this.particleArray[i].maxLifeTime, 0.1, 0.8);
@@ -105,21 +107,27 @@ class fire{
         }
     }
     particleFloat(){
+        // sets fire particle to float once
+        // they are spawned.
         var floatVel = createVector(0, -10);
         for (var i = 0; i < this.particleArray.length; i++){
             this.particleArray[i].pos.add(floatVel);
         }
     }
     sketch(){
+        // sketches the particle onto the canvas.
         for (var i = 0; i < this.particleArray.length; i++){
             this.particleArray[i].sketch();
         }
     }
     followMouse(){
+        // sets the fire object to follow the mouse.
         this.pos.x = mouseX;
         this.pos.y = mouseY;
     }
     remParticles(){
+        // removes particles from the this.particleArray
+        // once they're this.lifeTime ends.
         var i = 0;
         while (i < this.particleArray.length){
             if (this.particleArray[i].lifeTime < 0){
@@ -131,6 +139,8 @@ class fire{
         }
     }
     update(){
+        // collection of functions to be put into
+        // the draw.
         this.followMouse();
         this.spawnParticle();
         this.particleFloat();
@@ -138,5 +148,4 @@ class fire{
         this.sketch();
         this.remParticles();
     }
-
 }
