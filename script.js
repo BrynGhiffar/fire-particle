@@ -69,6 +69,8 @@ class fire{
     }
     spawnParticle(){
         // Spawns a particle every this.spawnTimeInterval frames
+        // this.particlesPerSpawn particles are spawned every
+        // spawn
         for (var i = 0; i < this.particlesPerSpawn; i++){
             if (this.timeToSpawn >= this.spawnTimeInterval){
 
