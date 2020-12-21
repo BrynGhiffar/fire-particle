@@ -1,2 +1,2 @@
-# p5-visualizations
-Interactive visualizations using p5
+# fire-particle
+A fire particle that follows your mouse. Made with p5.js
