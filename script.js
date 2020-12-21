@@ -38,11 +38,11 @@ class particle{
     sketch(){
         // Draws the particle onto the canvas.
         this.color = 'rgba(' + this.red.toString() + ', ' + this.green.toString() + ', ' + this.blue.toString() + ', ' + this.opacity.toString() + ')';
-            if (!(this.hasStroke)){
-                noStroke();
-            }
-            fill(this.color);
-            circle(this.pos.x, this.pos.y, this.diam);
+        if (!(this.hasStroke)){
+            noStroke();
+        }
+        fill(this.color);
+        circle(this.pos.x, this.pos.y, this.diam);
     }
 }
 
